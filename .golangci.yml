@@ -1,0 +1,67 @@
+---
+
+run:
+  tests: true
+  modules-download-mode: vendor
+
+linters:
+  enable:
+    - bodyclose
+    - deadcode
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - funlen
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - godox
+    - gofmt
+    - golint
+    - gomnd
+    - goprintffuncname
+    - gosec
+    - govet
+    - ineffassign
+    - lll
+    - maligned
+    - misspell
+    - nakedret
+    - prealloc
+    - rowserrcheck
+    - scopelint
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - varcheck
+    - whitespace
+    - wsl
+
+  disable:
+    - goimports
+
+
+  fast: false
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - funlen
+        - bodyclose
+        - gosec
+        - lll
+
+linters-settings:
+  funlen:
+    lines: 100
+
+output:
+  format: line-number

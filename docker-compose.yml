@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+    direttascraper-golang:
+        build:
+            context: .
+            dockerfile: .docker/golang/Dockerfile
+        working_dir: ${PWD}
+        command: sleep infinity
+        volumes:
+            - /tmp:/tmp
+            - ${PWD}:${PWD}
+            - /var/run/docker.sock:/var/run/docker.sock:rw
+        privileged: true
+        ports:
+            - "17171:17171"
+            - "40000:40000"
